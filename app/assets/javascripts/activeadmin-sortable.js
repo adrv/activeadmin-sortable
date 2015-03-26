@@ -12,7 +12,11 @@
           url: url,
           type: 'post',
           data: { position: ui.item.index() + 1 },
-          success: function() { window.location.reload() }
+          success: function() {
+            $(".ui-sortable tr").removeClass('even odd');
+            $(".ui-sortable tr").filter(":odd").addClass('odd');
+            $(".ui-sortable tr").filter(":even").addClass('even');
+           }
         });
       }
     });
